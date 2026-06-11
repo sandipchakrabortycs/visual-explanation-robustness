@@ -6,7 +6,7 @@ corresponding segmentation annotations.
 The dataset is not included in this repository because of its size
 and distribution conditions.
 
-dateset is available at https://www.vision.caltech.edu/datasets/cub_200_2011/
+The dataset is available at https://www.vision.caltech.edu/datasets/cub_200_2011/
 
 ## Expected directory structure
 
