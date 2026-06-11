@@ -1,0 +1,59 @@
+# CUB dataset and generated data
+data/raw/
+data/processed/
+data/interim/
+data/corrupted/
+
+# Trained models and checkpoints
+models/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.pkl
+*.joblib
+
+# Large arrays and generated outputs
+*.npy
+*.npz
+*.csv
+*.parquet
+
+# Allow small result tables when needed
+!results/tables/*.csv
+!results/metrics/*.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+venv/
+env/
+.venv/
+conda-env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE and operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+logs/
+tmp/
+temp/
+
+# Environment variables and credentials
+.env
+.env.*
+*.key
+secrets/
