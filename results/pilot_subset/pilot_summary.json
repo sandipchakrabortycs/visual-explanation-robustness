@@ -1,0 +1,13 @@
+{
+    "seed": 42,
+    "requested_pilot_size": 500,
+    "total_test_images": 5794,
+    "correctly_classified_images": 4716,
+    "incorrectly_classified_images": 1078,
+    "clean_test_accuracy": 0.8139454608215395,
+    "pilot_subset_size": 500,
+    "classes_represented": 200,
+    "mean_clean_confidence": 0.7611008580625057,
+    "minimum_clean_confidence": 0.0718610361218452,
+    "maximum_clean_confidence": 0.9895344376564026
+}
