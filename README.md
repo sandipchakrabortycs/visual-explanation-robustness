@@ -265,7 +265,7 @@ The repository structure may evolve as the implementation progresses.
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/visual-explanation-robustness.git
+git clone https://github.com/sandipchakrabortycs/visual-explanation-robustness.git
 cd visual-explanation-robustness
 ```
 
