@@ -17,7 +17,6 @@ checkpoints/
 # Large arrays and generated outputs
 *.npy
 *.npz
-*.csv
 *.parquet
 
 # Allow small result tables when needed
