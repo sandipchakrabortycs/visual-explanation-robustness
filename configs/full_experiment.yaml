@@ -1,0 +1,106 @@
+experiment:
+  name: full_visual_explanation_robustness
+  title: "Beyond Prediction Robustness: Evaluating the Stability, Localization and Faithfulness of Visual Explanations under Image Corruption"
+  seed: 42
+  image_size: 224
+
+dataset:
+  name: CUB_200_2011
+  use_official_test_split: true
+  validation_fraction: 0.20
+  explanation_cohort_size: 1000
+  class_balanced: true
+  require_clean_correct: true
+
+models:
+  names:
+    - resnet50
+    - convnext_tiny
+    - deit_tiny
+    - swin_tiny
+
+training:
+  pretrained: true
+  maximum_epochs: 30
+  batch_size: 32
+  number_of_workers: 2
+  early_stopping_patience: 6
+  scheduler_patience: 2
+  scheduler_factor: 0.5
+  optimizer: adamw
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  label_smoothing: 0.1
+  mixed_precision: true
+  checkpoint_metric: macro_f1
+
+corruptions:
+  types:
+    - gaussian_noise
+    - impulse_noise
+    - defocus_blur
+    - motion_blur
+    - brightness
+    - contrast
+    - jpeg_compression
+    - pixelation
+
+  severities:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+
+explanations:
+  methods:
+    - gradcam
+    - integrated_gradients
+  target: predicted_class
+  save_precision: float16
+
+stability:
+  top_fractions:
+    - 0.10
+    - 0.20
+    - 0.30
+
+  metrics:
+    - pearson
+    - spearman
+    - cosine
+    - ssim
+    - top_fraction_iou
+    - centroid_displacement
+
+localization:
+  use_segmentation_masks: true
+
+  metrics:
+    - object_attribution_mass
+    - background_attribution_ratio
+    - pointing_game
+    - salient_object_iou
+
+faithfulness:
+  replacement: gaussian_blur
+  blur_radius: 12
+
+  masking_fractions:
+    - 0.05
+    - 0.10
+    - 0.20
+    - 0.30
+    - 0.40
+    - 0.50
+
+  baselines:
+    - compact_random
+    - relocated_explanation
+
+  baseline_repeats: 5
+
+statistics:
+  bootstrap_iterations: 2000
+  confidence_level: 0.95
+  multiple_testing_correction: fdr_bh

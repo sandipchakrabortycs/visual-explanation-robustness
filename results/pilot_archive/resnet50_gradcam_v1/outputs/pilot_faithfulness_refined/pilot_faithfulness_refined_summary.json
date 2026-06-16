@@ -1,0 +1,55 @@
+{
+    "checkpoint_epoch": 19,
+    "unique_explanations": 4263,
+    "total_evaluation_rows": 12789,
+    "clean_explanations": 500,
+    "corrupted_explanations": 3763,
+    "masking_fractions": [
+        0.1,
+        0.2,
+        0.3
+    ],
+    "blur_radius": 12.0,
+    "random_repeats": 5,
+    "replacement_strategy": "Gaussian-blurred image pixels",
+    "compact_random_baseline": "Exact-area compact random region",
+    "relocated_baseline": "Relocated Grad-CAM mask shape",
+    "fraction_summaries": {
+        "0.10": {
+            "clean_mean_explanation_drop": 0.5032375390678644,
+            "clean_mean_compact_random_drop": 0.09842695258825551,
+            "clean_mean_relocated_drop": 0.17083244707982523,
+            "clean_advantage_over_compact_random": 0.4048105862308294,
+            "clean_advantage_over_relocated": 0.3324050915511325,
+            "corrupted_mean_explanation_drop": 0.4935494454163259,
+            "corrupted_mean_compact_random_drop": 0.11146463183711172,
+            "corrupted_mean_relocated_drop": 0.1862284319776657,
+            "corrupted_advantage_over_compact_random": 0.3820848136195092,
+            "corrupted_advantage_over_relocated": 0.30732101353307717
+        },
+        "0.20": {
+            "clean_mean_explanation_drop": 0.6830042630881071,
+            "clean_mean_compact_random_drop": 0.19586663470044732,
+            "clean_mean_relocated_drop": 0.3602296136013465,
+            "clean_advantage_over_compact_random": 0.4871376282013953,
+            "clean_advantage_over_relocated": 0.32277464964613317,
+            "corrupted_mean_explanation_drop": 0.6350048752781275,
+            "corrupted_mean_compact_random_drop": 0.21464180618829623,
+            "corrupted_mean_relocated_drop": 0.37089335193133033,
+            "corrupted_advantage_over_compact_random": 0.4203630690493824,
+            "corrupted_advantage_over_relocated": 0.26411152333020543
+        },
+        "0.30": {
+            "clean_mean_explanation_drop": 0.7239545839130879,
+            "clean_mean_compact_random_drop": 0.30878882683592385,
+            "clean_mean_relocated_drop": 0.5370257403366268,
+            "clean_advantage_over_compact_random": 0.41516575786471366,
+            "clean_advantage_over_relocated": 0.18692884419858455,
+            "corrupted_mean_explanation_drop": 0.6710114763268061,
+            "corrupted_mean_compact_random_drop": 0.3290074551141822,
+            "corrupted_mean_relocated_drop": 0.5207114001450683,
+            "corrupted_advantage_over_compact_random": 0.3420040210015496,
+            "corrupted_advantage_over_relocated": 0.1503000763562215
+        }
+    }
+}

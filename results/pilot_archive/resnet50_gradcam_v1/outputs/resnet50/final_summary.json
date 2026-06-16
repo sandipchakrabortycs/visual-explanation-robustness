@@ -1,0 +1,9 @@
+{
+    "best_epoch": 19,
+    "best_validation_macro_f1": 0.7984071892160128,
+    "test_accuracy": 0.8139454608215395,
+    "test_macro_f1": 0.8138858389331785,
+    "training_minutes": 61.77046160300573,
+    "best_checkpoint": "/content/drive/MyDrive/visual_explanation_robustness/models/resnet50/best_resnet50_cub.pth",
+    "prediction_file": "/content/drive/MyDrive/visual_explanation_robustness/results/predictions/resnet50_clean_test_predictions.csv"
+}

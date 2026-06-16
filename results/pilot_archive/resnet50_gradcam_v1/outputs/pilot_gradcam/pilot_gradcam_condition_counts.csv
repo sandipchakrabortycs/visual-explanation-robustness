@@ -1,0 +1,11 @@
+source_type,corruption_type,severity,heatmap_count,prediction_match_rate
+clean,clean,0,500,1.0
+corrupted,brightness,1,490,1.0
+corrupted,brightness,3,482,1.0
+corrupted,brightness,5,460,1.0
+corrupted,gaussian_noise,1,466,1.0
+corrupted,gaussian_noise,3,413,1.0
+corrupted,gaussian_noise,5,319,1.0
+corrupted,motion_blur,1,461,1.0
+corrupted,motion_blur,3,388,1.0
+corrupted,motion_blur,5,284,1.0
