@@ -1,0 +1,30 @@
+{
+    "checkpoint_path": "D:\\Demo Python\\visual_explanation_robustness\\models\\resnet50\\best_resnet50_cub.pth",
+    "checkpoint_epoch": 19,
+    "evaluated_images": 4500,
+    "unique_clean_images": 500,
+    "corruption_types": [
+        "brightness",
+        "gaussian_noise",
+        "motion_blur"
+    ],
+    "severity_levels": [
+        1,
+        3,
+        5
+    ],
+    "overall_corrupted_accuracy": 0.8362222222222222,
+    "overall_prediction_preservation_rate": 0.8362222222222222,
+    "overall_correct_and_preserved_rate": 0.8362222222222222,
+    "overall_mean_confidence_drop": 0.12284772983607319,
+    "best_condition": {
+        "corruption_type": "brightness",
+        "severity": 1,
+        "accuracy": 0.98
+    },
+    "worst_condition": {
+        "corruption_type": "motion_blur",
+        "severity": 5,
+        "accuracy": 0.568
+    }
+}

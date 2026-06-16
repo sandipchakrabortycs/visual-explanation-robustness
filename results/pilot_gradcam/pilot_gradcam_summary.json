@@ -1,0 +1,13 @@
+{
+    "checkpoint_epoch": 19,
+    "target_layer": "model.layer4[-1]",
+    "target_class": "ground-truth class",
+    "image_size": 224,
+    "heatmap_format": "16-bit normalized PNG",
+    "clean_heatmaps": 500,
+    "corrupted_heatmaps": 3763,
+    "total_heatmaps": 4263,
+    "prediction_mismatches": 0,
+    "output_manifest": "D:\\Demo Python\\visual_explanation_robustness\\results\\pilot_gradcam\\pilot_gradcam_manifest.csv",
+    "heatmap_root": "D:\\Demo Python\\visual_explanation_robustness\\results\\pilot_gradcam\\heatmaps"
+}

@@ -1,0 +1,23 @@
+{
+    "clean_images": 500,
+    "evaluated_pairs": 3763,
+    "top_fraction": 0.2,
+    "corruption_types": [
+        "brightness",
+        "gaussian_noise",
+        "motion_blur"
+    ],
+    "severity_levels": [
+        1,
+        3,
+        5
+    ],
+    "overall_mean_spearman": 0.8147738372976058,
+    "overall_mean_ssim": 0.8783799678596544,
+    "overall_mean_top20_iou": 0.7865481474431357,
+    "overall_mean_centroid_displacement": 0.03238558660929891,
+    "overall_clean_object_mass": 0.6256840932939088,
+    "overall_corrupted_object_mass": 0.5921128493066966,
+    "overall_clean_pointing_accuracy": 0.8442731862875366,
+    "overall_corrupted_pointing_accuracy": 0.7850119585437151
+}
