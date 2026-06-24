@@ -426,7 +426,9 @@ def main() -> None:
         pretrained=bool(
             training_config["pretrained"]
         ),
-        dropout=0.30,
+        dropout=float(
+            training_config["dropout"]
+        ),
     )
 
     (
@@ -449,6 +451,14 @@ def main() -> None:
     print(
         f"Trainable parameters: "
         f"{trainable_parameters:,}"
+    )
+    print(
+        "Learning rate: "
+        f"{training_config['learning_rate']}"
+    )
+    print(
+        "Dropout: "
+        f"{training_config['dropout']}"
     )
 
     with (

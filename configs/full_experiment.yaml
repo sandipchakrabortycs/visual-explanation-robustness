@@ -19,18 +19,43 @@ models:
     - deit_tiny
     - swin_tiny
 
+  settings:
+    resnet50:
+      batch_size: 32
+      number_of_workers: 2
+      learning_rate: 0.0001
+      dropout: 0.30
+
+    convnext_tiny:
+      batch_size: 16
+      number_of_workers: 2
+      learning_rate: 0.0001
+      dropout: 0.30
+
+    deit_tiny:
+      batch_size: 32
+      number_of_workers: 2
+      learning_rate: 0.0001
+      dropout: 0.10
+
+    swin_tiny:
+      batch_size: 16
+      number_of_workers: 2
+      learning_rate: 0.0001
+      dropout: 0.20
 training:
   pretrained: true
   maximum_epochs: 30
-  batch_size: 32
-  number_of_workers: 2
   early_stopping_patience: 6
   scheduler_patience: 2
   scheduler_factor: 0.5
   optimizer: adamw
   learning_rate: 0.0001
+  batch_size: 16
+  number_of_workers: 2
   weight_decay: 0.0001
   label_smoothing: 0.1
+  dropout: 0.30
   mixed_precision: true
   checkpoint_metric: macro_f1
 

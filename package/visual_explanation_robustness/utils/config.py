@@ -93,6 +93,73 @@ def validate_config(
             f"{sorted(expected_models)}"
         )
 
+    model_settings = (
+        config["models"]
+        .get("settings", {})
+    )
+
+    missing_model_settings = (
+        expected_models
+        - set(model_settings.keys())
+    )
+
+    if missing_model_settings:
+        raise ValueError(
+            "Missing model-specific settings for: "
+            f"{sorted(missing_model_settings)}"
+        )
+
+    for model_name in expected_models:
+        settings = model_settings[
+            model_name
+        ]
+
+        required_model_fields = {
+            "batch_size",
+            "number_of_workers",
+            "learning_rate",
+            "dropout",
+        }
+
+        missing_fields = (
+            required_model_fields
+            - set(settings.keys())
+        )
+
+        if missing_fields:
+            raise ValueError(
+                f"Model {model_name} is missing "
+                f"settings: {sorted(missing_fields)}"
+            )
+
+        if int(settings["batch_size"]) <= 0:
+            raise ValueError(
+                f"Invalid batch size for "
+                f"{model_name}."
+            )
+
+        if int(settings["number_of_workers"]) < 0:
+            raise ValueError(
+                f"Invalid number of workers for "
+                f"{model_name}."
+            )
+
+        if float(settings["learning_rate"]) <= 0:
+            raise ValueError(
+                f"Invalid learning rate for "
+                f"{model_name}."
+            )
+
+        dropout = float(
+            settings["dropout"]
+        )
+
+        if not 0.0 <= dropout < 1.0:
+            raise ValueError(
+                f"Invalid dropout for "
+                f"{model_name}."
+            )
+
     severities = config[
         "corruptions"
     ].get("severities", [])
@@ -132,6 +199,18 @@ def get_model_config(
         config["training"]
     )
 
-    model_config["model_name"] = model_name
+    model_settings = (
+        config["models"]
+        .get("settings", {})
+        .get(model_name, {})
+    )
+
+    model_config.update(
+        model_settings
+    )
+
+    model_config["model_name"] = (
+        model_name
+    )
 
     return model_config
