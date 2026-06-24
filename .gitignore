@@ -5,7 +5,7 @@ data/interim/
 data/corrupted/
 
 # Trained models and checkpoints
-models/
+/models/
 checkpoints/
 *.pt
 *.pth
